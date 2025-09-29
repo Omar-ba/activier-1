@@ -4,20 +4,26 @@ import java.net.Socket;
 
 public class Client {
     public static void main(String[] args) {
+        Socket socket = null;
+        
         try {
-            // La première étape : Connexion au serveur
             System.out.println("Je suis un client pas encore connecté...");
             
-            // Connexion au serveur localhost sur le port 0
-            Socket socket = new Socket("192.168.1.100", 0);
+            
+            socket = new Socket("192.168.0.27", 1234); 
             System.out.println("Je suis un client connecté");
             
-            // La dernière étape : Fermer socket
-            socket.close();
+            Thread.sleep(3000);
             
         } catch (Exception e) {
-            System.err.println("Erreur client : " + e.getMessage());
-            e.printStackTrace();
+            System.out.println("Erreur : " + e.getMessage());
+        } finally {
+            try {
+                if (socket != null) socket.close();
+            } catch (Exception e) {
+                System.out.println("Erreur fermeture : " + e.getMessage());
+            }
         }
+    
     }
 }
