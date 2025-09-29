@@ -11,15 +11,12 @@ public class Server {
         
         try {
             // La première étape : Création du serveur socket
-            server = new ServerSocket(1200);
+            server = new ServerSocket(12);
             System.out.println("Je suis un serveur en attente de la connexion d'un client");
             
             // La deuxième étape : Attente de connexion client
             socket = server.accept();
             System.out.println("Un client est connecté");
-            
-            // Garder la connexion active quelques secondes
-            Thread.sleep(5000);
             
         } catch (Exception e) {
             System.out.println("Erreur : " + e.getMessage());
