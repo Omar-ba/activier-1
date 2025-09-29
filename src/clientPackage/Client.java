@@ -10,7 +10,7 @@ public class Client {
             System.out.println("Je suis un client pas encore connecté...");
             
             
-            socket = new Socket("192.168.0.27", 1234); 
+            socket = new Socket("192.168.0.27", 1200); 
             System.out.println("Je suis un client connecté");
             
             Thread.sleep(3000);
