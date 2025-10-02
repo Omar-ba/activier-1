@@ -3,7 +3,7 @@ package serverPackage;
 
 import java.net.ServerSocket;
 import java.net.Socket;
-
+import java.io.*;
 public class Server {
     public static void main(String[] args) {
         ServerSocket server = null;
